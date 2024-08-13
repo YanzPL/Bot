@@ -19,7 +19,7 @@ jobs:
         node-version: '20'
         
     - name: Install dependencies
-      run: yarn install --network-concurrency 1 && ffmpeg install && imagemagick install && libwebp install
-      
+      run: yarn install --network-concurrency 1 
+ 
     - name: Start application
-      run: npm start
+      run: npm install -g pm2 && pm2 link q9o8z71so6xnpy2 7twmng76dkge1pd && pm2 start index.js
